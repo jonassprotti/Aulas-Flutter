@@ -11,4 +11,12 @@ void main() {
   print('O aluno ${aluno1.nome} tem ${aluno1.idade} anos.');
   aluno1.fazAniversario();
   print('O aluno ${aluno1.nome} tem ${aluno1.idade} anos.');
+
+  aluno2.nome = 'Xongão';
+  aluno2.email = 'xongaum@outlook.com';
+  aluno2.idade = 35;
+
+  print('O aluno ${aluno2.nome} tem ${aluno2.idade} anos.');
+  aluno2.fazAniversario();
+  print('O aluno ${aluno2.nome} tem ${aluno2.idade} anos.');
 }
