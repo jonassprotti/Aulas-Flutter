@@ -80,7 +80,60 @@ void main(List<String> arguments) {
 
   var alunos = List.filled(0, Aluno(), growable: true);
   alunos.add(Aluno(ra: 123, nome: 'Jonas Sprocatti'));
+  alunos.add(Aluno(ra: 321, nome: 'Tio patinhas'));
+  alunos.add(Aluno(ra: 987, nome: 'Zé Carioca'));
   print(alunos.length);
+
+  //remover objetos da lista
+  alunos.removeWhere((Aluno a) => a.nome == 'Tio patinhas');
+
+  //Atualizando os objetos de uma lista
+  alunos[alunos.indexWhere((Aluno a) => a.nome == 'Jonas Sprocatti')].nome =
+      'Xongão';
+
+  showAll(alunos);
+
+  //Treinando
+  //Transformar a lista de compras em objetos e realizar:
+  //- Inclusões, exclusões e listagem de produtos
+  //
+  var compras = List.filled(0, Compras(), growable: true);
+  compras.add(Compras(nome: 'Arroz', valor: 15.95));
+  compras.add(Compras(nome: 'Feijão', valor: 20.40));
+  compras.add(Compras(nome: 'Alcatra', valor: 40.89));
+  print(compras.length);
+
+  //remover objetos da lista
+  compras.removeWhere((Compras a) => a.nome == 'Feijão');
+
+  //Atualizando os objetos de uma lista
+  compras[compras.indexWhere((Compras a) => a.nome == 'Arroz')].nome =
+      'Arroz Parbolizado';
+
+  mostraTudo(compras);
+}
+
+//Mostra valores dos alunos
+void showAll(var alunos) {
+  for (var aluno in alunos) {
+    print('${aluno.ra} - ${aluno.nome}');
+  }
+}
+
+//mostra valores das compras
+void mostraTudo(var compras) {
+  for (var compra in compras) {
+    print('${compra.nome} - ${compra.valor}');
+  }
+}
+
+//compras
+class Compras {
+  String nome;
+  double valor;
+
+  //Construtor
+  Compras({this.nome, this.valor});
 }
 
 class Aluno {
